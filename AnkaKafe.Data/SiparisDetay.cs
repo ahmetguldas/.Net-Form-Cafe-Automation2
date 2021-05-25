@@ -11,7 +11,7 @@ namespace AnkaKafe.Data
         public string UrunAd { get; set; }
         public decimal BirimFiyat { get; set; }
         public int Adet { get; set; }
-        public string TutarTL { get { return string.Format("TL{0:n2}", Tutar()); } }
+        public string TutarTL { get { return string.Format("₺{0:n2}", Tutar()); } }
         public decimal Tutar()
         {
             return BirimFiyat * Adet;

@@ -12,7 +12,7 @@ namespace AnkaKafe.Data
         public decimal BirimFiyat { get; set; }
         public override string ToString()
         {
-            return $"{UrunAd} (TL{BirimFiyat:0.00} )";
+            return $"{UrunAd} (₺{BirimFiyat:0.00} )";
         }
     }
 }
