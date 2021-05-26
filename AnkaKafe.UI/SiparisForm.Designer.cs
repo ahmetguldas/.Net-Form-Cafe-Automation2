@@ -69,12 +69,23 @@ namespace AnkaKafe.UI
             // nudAdet
             // 
             this.nudAdet.Location = new System.Drawing.Point(363, 43);
+            this.nudAdet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudAdet.Name = "nudAdet";
             this.nudAdet.Size = new System.Drawing.Size(220, 47);
             this.nudAdet.TabIndex = 2;
+            this.nudAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cboUrun
             // 
+            this.cboUrun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUrun.FormattingEnabled = true;
             this.cboUrun.Location = new System.Drawing.Point(9, 46);
             this.cboUrun.Name = "cboUrun";
@@ -89,10 +100,12 @@ namespace AnkaKafe.UI
             this.btnEkle.TabIndex = 4;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // cboMasaNo
             // 
             this.cboMasaNo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cboMasaNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMasaNo.FormattingEnabled = true;
             this.cboMasaNo.Location = new System.Drawing.Point(960, 45);
             this.cboMasaNo.Name = "cboMasaNo";
