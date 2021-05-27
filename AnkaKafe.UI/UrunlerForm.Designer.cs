@@ -150,6 +150,7 @@ namespace AnkaKafe.UI
             this.btnIptal.Text = "Iptal";
             this.btnIptal.UseVisualStyleBackColor = true;
             this.btnIptal.Visible = false;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // btnGuncelle
             // 

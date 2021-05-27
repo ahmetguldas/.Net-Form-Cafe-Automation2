@@ -94,5 +94,10 @@ namespace AnkaKafe.UI
             btnEkle.Text = "KAYDET";
             btnIptal.Show();
         }
+
+        private void btnIptal_Click(object sender, EventArgs e)
+        {
+            EkleFormunuSifirla();
+        }
     }
 }
