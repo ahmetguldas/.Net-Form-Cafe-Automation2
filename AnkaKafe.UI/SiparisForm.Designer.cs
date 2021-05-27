@@ -38,16 +38,16 @@ namespace AnkaKafe.UI
             this.btnTasi = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvSiparisDetaylar = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.btnIptal = new System.Windows.Forms.Button();
             this.btnOde = new System.Windows.Forms.Button();
             this.btnAnasayfa = new System.Windows.Forms.Button();
             this.lblMasaNo = new System.Windows.Forms.Label();
             this.lblOdemeTutar = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisDetaylar)).BeginInit();
             this.SuspendLayout();
@@ -161,80 +161,6 @@ namespace AnkaKafe.UI
             this.dgvSiparisDetaylar.TabIndex = 8;
             this.dgvSiparisDetaylar.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvSiparisDetaylar_UserDeletingRow);
             // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(973, 505);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(226, 41);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Odeme Tutari: ";
-            // 
-            // btnIptal
-            // 
-            this.btnIptal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnIptal.BackColor = System.Drawing.Color.Maroon;
-            this.btnIptal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnIptal.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIptal.Location = new System.Drawing.Point(973, 575);
-            this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(257, 105);
-            this.btnIptal.TabIndex = 10;
-            this.btnIptal.Text = "SIPARIS IPTAL";
-            this.btnIptal.UseVisualStyleBackColor = false;
-            // 
-            // btnOde
-            // 
-            this.btnOde.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnOde.BackColor = System.Drawing.Color.Green;
-            this.btnOde.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnOde.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOde.Location = new System.Drawing.Point(1247, 575);
-            this.btnOde.Name = "btnOde";
-            this.btnOde.Size = new System.Drawing.Size(257, 105);
-            this.btnOde.TabIndex = 11;
-            this.btnOde.Text = "ODEME AL";
-            this.btnOde.UseVisualStyleBackColor = false;
-            // 
-            // btnAnasayfa
-            // 
-            this.btnAnasayfa.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnAnasayfa.BackColor = System.Drawing.Color.Wheat;
-            this.btnAnasayfa.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAnasayfa.ForeColor = System.Drawing.Color.CadetBlue;
-            this.btnAnasayfa.Location = new System.Drawing.Point(973, 688);
-            this.btnAnasayfa.Name = "btnAnasayfa";
-            this.btnAnasayfa.Size = new System.Drawing.Size(531, 106);
-            this.btnAnasayfa.TabIndex = 13;
-            this.btnAnasayfa.Text = "ANASAYFAYA DON";
-            this.btnAnasayfa.UseVisualStyleBackColor = false;
-            // 
-            // lblMasaNo
-            // 
-            this.lblMasaNo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblMasaNo.BackColor = System.Drawing.Color.Tomato;
-            this.lblMasaNo.Font = new System.Drawing.Font("Segoe UI", 70F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMasaNo.ForeColor = System.Drawing.Color.Transparent;
-            this.lblMasaNo.Location = new System.Drawing.Point(973, 103);
-            this.lblMasaNo.Name = "lblMasaNo";
-            this.lblMasaNo.Size = new System.Drawing.Size(531, 325);
-            this.lblMasaNo.TabIndex = 14;
-            this.lblMasaNo.Text = "01";
-            this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblOdemeTutar
-            // 
-            this.lblOdemeTutar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblOdemeTutar.AutoSize = true;
-            this.lblOdemeTutar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblOdemeTutar.Location = new System.Drawing.Point(1205, 505);
-            this.lblOdemeTutar.Name = "lblOdemeTutar";
-            this.lblOdemeTutar.Size = new System.Drawing.Size(110, 41);
-            this.lblOdemeTutar.TabIndex = 15;
-            this.lblOdemeTutar.Text = "7.55TL";
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "UrunAd";
@@ -266,6 +192,83 @@ namespace AnkaKafe.UI
             this.Column4.MinimumWidth = 10;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(973, 505);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(226, 41);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Odeme Tutari: ";
+            // 
+            // btnIptal
+            // 
+            this.btnIptal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnIptal.BackColor = System.Drawing.Color.Maroon;
+            this.btnIptal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnIptal.ForeColor = System.Drawing.Color.Transparent;
+            this.btnIptal.Location = new System.Drawing.Point(973, 575);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(257, 105);
+            this.btnIptal.TabIndex = 10;
+            this.btnIptal.Text = "SIPARIS IPTAL";
+            this.btnIptal.UseVisualStyleBackColor = false;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
+            // 
+            // btnOde
+            // 
+            this.btnOde.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnOde.BackColor = System.Drawing.Color.Green;
+            this.btnOde.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnOde.ForeColor = System.Drawing.Color.Transparent;
+            this.btnOde.Location = new System.Drawing.Point(1247, 575);
+            this.btnOde.Name = "btnOde";
+            this.btnOde.Size = new System.Drawing.Size(257, 105);
+            this.btnOde.TabIndex = 11;
+            this.btnOde.Text = "ODEME AL";
+            this.btnOde.UseVisualStyleBackColor = false;
+            this.btnOde.Click += new System.EventHandler(this.btnOde_Click);
+            // 
+            // btnAnasayfa
+            // 
+            this.btnAnasayfa.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAnasayfa.BackColor = System.Drawing.Color.Wheat;
+            this.btnAnasayfa.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAnasayfa.ForeColor = System.Drawing.Color.CadetBlue;
+            this.btnAnasayfa.Location = new System.Drawing.Point(973, 688);
+            this.btnAnasayfa.Name = "btnAnasayfa";
+            this.btnAnasayfa.Size = new System.Drawing.Size(531, 106);
+            this.btnAnasayfa.TabIndex = 13;
+            this.btnAnasayfa.Text = "ANASAYFAYA DON";
+            this.btnAnasayfa.UseVisualStyleBackColor = false;
+            this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
+            // 
+            // lblMasaNo
+            // 
+            this.lblMasaNo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblMasaNo.BackColor = System.Drawing.Color.Tomato;
+            this.lblMasaNo.Font = new System.Drawing.Font("Segoe UI", 70F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMasaNo.ForeColor = System.Drawing.Color.Transparent;
+            this.lblMasaNo.Location = new System.Drawing.Point(973, 103);
+            this.lblMasaNo.Name = "lblMasaNo";
+            this.lblMasaNo.Size = new System.Drawing.Size(531, 325);
+            this.lblMasaNo.TabIndex = 14;
+            this.lblMasaNo.Text = "01";
+            this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblOdemeTutar
+            // 
+            this.lblOdemeTutar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblOdemeTutar.AutoSize = true;
+            this.lblOdemeTutar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOdemeTutar.Location = new System.Drawing.Point(1205, 505);
+            this.lblOdemeTutar.Name = "lblOdemeTutar";
+            this.lblOdemeTutar.Size = new System.Drawing.Size(110, 41);
+            this.lblOdemeTutar.TabIndex = 15;
+            this.lblOdemeTutar.Text = "7.55TL";
             // 
             // SiparisForm
             // 

@@ -72,6 +72,12 @@ namespace AnkaKafe.UI
             //todo: bu siparisi baska bir formda ac
             SiparisForm siparisForm = new SiparisForm(db, siparis);
             siparisForm.ShowDialog();
+
+            //Siparis formu kapandiktan sonra siparis durumunu kontrol et
+            if (siparis.Durum != SiparisDurum.Aktif)
+            {
+                lvi.ImageKey = "bos";
+            }
         }
 
         private Siparis SiparisBul(int masaNo)

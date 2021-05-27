@@ -25,6 +25,7 @@ namespace AnkaKafe.UI
             InitializeComponent();
             dgvSiparisDetaylar.AutoGenerateColumns = false;//otomatik sutun olusturmayi kapat
             UrunleriGoster();
+            EkleFormSifirla();
             MasaNoGuncelle();
             FiyatGuncelle();
             DetaylariListele();
@@ -54,6 +55,10 @@ namespace AnkaKafe.UI
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
+            if (cboUrun.SelectedIndex == -1 || nudAdet.Value < 1) 
+                return;//secilen urun yok, metotdan cik
+
+
             Urun urun = (Urun)cboUrun.SelectedItem;
 
             SiparisDetay siparisDetay = new SiparisDetay()
@@ -64,6 +69,13 @@ namespace AnkaKafe.UI
             };
 
             _blSiparisDetaylar.Add(siparisDetay);
+            EkleFormSifirla();
+        }
+
+        private void EkleFormSifirla()
+        {
+            cboUrun.SelectedIndex = -1;//en son urun secili kalsin istersek yoruma alalim
+            nudAdet.Value = 1;
         }
 
         private void DetaylariListele()
@@ -83,6 +95,31 @@ namespace AnkaKafe.UI
 
             //true atamaniz sonucunda satir silme isleminin onune gecmis olursunuz.
             e.Cancel = dr == DialogResult.No;
+        }
+
+        private void btnAnasayfa_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnIptal_Click(object sender, EventArgs e)
+        {
+            SiparisKapat(SiparisDurum.Iptal,0);
+        }
+
+        private void btnOde_Click(object sender, EventArgs e)
+        {
+            SiparisKapat(SiparisDurum.Odendi,_siparis.ToplamTutar());
+        }
+
+        private void SiparisKapat(SiparisDurum siparisDurum,decimal odenenTutar)
+        {
+            _siparis.OdenenTutar = odenenTutar;
+            _siparis.Durum = siparisDurum;
+            _siparis.KapanisZamani = DateTime.Now;
+            _db.AktifSiparisler.Remove(_siparis);
+            _db.GecmisSiparis.Add(_siparis);
+            Close();
         }
     }
 }
