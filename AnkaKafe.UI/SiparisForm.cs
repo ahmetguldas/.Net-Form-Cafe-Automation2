@@ -15,16 +15,24 @@ namespace AnkaKafe.UI
     {
         private readonly KafeVeri _db;
         private readonly Siparis _siparis;
+        private readonly BindingList<SiparisDetay> _blSiparisDetaylar;
 
         public SiparisForm(KafeVeri kafeVeri, Siparis siparis)
         {
             _db = kafeVeri;
             _siparis = siparis;
+            _blSiparisDetaylar = new BindingList<SiparisDetay>(siparis.SiparisDetaylar);
             InitializeComponent();
             UrunleriGoster();
             MasaNoGuncelle();
             FiyatGuncelle();
             DetaylariListele();
+            _blSiparisDetaylar.ListChanged += _blSiparisDetaylar_ListChanged;
+        }
+
+        private void _blSiparisDetaylar_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            FiyatGuncelle();
         }
 
         private void UrunleriGoster()
@@ -54,16 +62,26 @@ namespace AnkaKafe.UI
                 Adet = (int)nudAdet.Value
             };
 
-            _siparis.SiparisDetaylar.Add(siparisDetay);
-            DetaylariListele();
-            FiyatGuncelle();
+            _blSiparisDetaylar.Add(siparisDetay);
         }
 
         private void DetaylariListele()
         {
-            dgvSiparisDetaylar.DataSource = null;
-            dgvSiparisDetaylar.DataSource = _siparis.SiparisDetaylar;
-           
+            dgvSiparisDetaylar.DataSource = _blSiparisDetaylar;
+
+        }
+
+        private void dgvSiparisDetaylar_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show(
+                text: "Secili Siparis Detaylari Silinecektir. Onayliyor musun?",
+                caption: "Silme Onayi",
+                buttons: MessageBoxButtons.YesNo,
+                icon: MessageBoxIcon.Exclamation,
+                defaultButton: MessageBoxDefaultButton.Button2);
+
+            //true atamaniz sonucunda satir silme isleminin onune gecmis olursunuz.
+            e.Cancel = dr == DialogResult.No;
         }
     }
 }
