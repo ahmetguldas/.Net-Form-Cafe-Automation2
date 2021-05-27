@@ -23,6 +23,7 @@ namespace AnkaKafe.UI
             _siparis = siparis;
             _blSiparisDetaylar = new BindingList<SiparisDetay>(siparis.SiparisDetaylar);
             InitializeComponent();
+            dgvSiparisDetaylar.AutoGenerateColumns = false;//otomatik sutun olusturmayi kapat
             UrunleriGoster();
             MasaNoGuncelle();
             FiyatGuncelle();
