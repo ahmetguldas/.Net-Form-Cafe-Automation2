@@ -65,12 +65,12 @@ namespace AnkaKafe.UI
 
             if (siparis == null)
             {
-                siparis = new Siparis(){MasaNo = masaNo};
+                siparis = new Siparis() { MasaNo = masaNo };
                 db.AktifSiparisler.Add(siparis);
             }
 
             //todo: bu siparisi baska bir formda ac
-            SiparisForm siparisForm = new SiparisForm(db,siparis);
+            SiparisForm siparisForm = new SiparisForm(db, siparis);
             siparisForm.ShowDialog();
         }
 

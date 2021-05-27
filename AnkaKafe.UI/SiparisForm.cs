@@ -15,7 +15,8 @@ namespace AnkaKafe.UI
     {
         private readonly KafeVeri _db;
         private readonly Siparis _siparis;
-        public SiparisForm(KafeVeri kafeVeri,Siparis siparis)
+
+        public SiparisForm(KafeVeri kafeVeri, Siparis siparis)
         {
             _db = kafeVeri;
             _siparis = siparis;
@@ -55,12 +56,14 @@ namespace AnkaKafe.UI
 
             _siparis.SiparisDetaylar.Add(siparisDetay);
             DetaylariListele();
+            FiyatGuncelle();
         }
 
         private void DetaylariListele()
         {
             dgvSiparisDetaylar.DataSource = null;
             dgvSiparisDetaylar.DataSource = _siparis.SiparisDetaylar;
+           
         }
     }
 }
