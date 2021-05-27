@@ -50,7 +50,7 @@ namespace AnkaKafe.UI
             }
             else if (e.ClickedItem == tsmiGecmisSiparisler)
             {
-                new GecmisSiparislerForm().ShowDialog();
+                new GecmisSiparislerForm(db).ShowDialog();
             }
         }
 
