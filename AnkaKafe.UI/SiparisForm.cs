@@ -61,6 +61,9 @@ namespace AnkaKafe.UI
 
             Urun urun = (Urun)cboUrun.SelectedItem;
 
+            SiparisDetay mevcut = _siparis.SiparisDetaylar.FirstOrDefault(x => x.UrunAd == urun.UrunAd);
+            if (mevcut == null)
+            {
             SiparisDetay siparisDetay = new SiparisDetay()
             {
                 UrunAd = urun.UrunAd,
@@ -69,6 +72,15 @@ namespace AnkaKafe.UI
             };
 
             _blSiparisDetaylar.Add(siparisDetay);
+
+            }
+            else
+            {
+                mevcut.Adet += (int)nudAdet.Value;
+                _blSiparisDetaylar.ResetBindings(); 
+            }
+
+
             EkleFormSifirla();
         }
 
