@@ -18,6 +18,7 @@ namespace AnkaKafe.UI
         {
             OrnekUrunleriEkle(); //Ileride Kaldirilacak (Ornek Urun Ekleme Islemi)
             InitializeComponent();
+            Icon = Resource.icon;
             masalarImageList.Images.Add("bos", Resource.bos);
             masalarImageList.Images.Add("dolu", Resource.dolu);
             MasalariOlustur();
@@ -71,12 +72,32 @@ namespace AnkaKafe.UI
 
             //todo: bu siparisi baska bir formda ac
             SiparisForm siparisForm = new SiparisForm(db, siparis);
+
+            siparisForm.MasaTasindi += SiparisForm_MasaTasindi;
+
             siparisForm.ShowDialog();
 
             //Siparis formu kapandiktan sonra siparis durumunu kontrol et
             if (siparis.Durum != SiparisDurum.Aktif)
             {
                 lvi.ImageKey = "bos";
+            }
+        }
+
+        private void SiparisForm_MasaTasindi(object sender, MasaTasindiEventArgs e)
+        {
+            foreach (ListViewItem lvi in lvwMasalar.Items)
+            {
+                int masaNo = (int)lvi.Tag;
+                if (masaNo == e.EskiMasaNo)
+                {
+                    lvi.ImageKey = "bos";
+                }
+                else if (masaNo == e.YeniMasaNo)
+                {
+                    lvi.ImageKey = "dolu";
+                }
+
             }
         }
 
@@ -92,6 +113,11 @@ namespace AnkaKafe.UI
                 }
             }
             return null;
+        }
+
+        private void menuStrip1_DoubleClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

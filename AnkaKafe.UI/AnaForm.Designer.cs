@@ -51,6 +51,7 @@ namespace AnkaKafe.UI
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.menuStrip1.DoubleClick += new System.EventHandler(this.menuStrip1_DoubleClick);
             // 
             // tsmiUrunler
             // 

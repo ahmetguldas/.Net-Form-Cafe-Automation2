@@ -28,6 +28,10 @@ namespace AnkaKafe.UI
                 Siparis siparis = (Siparis)dgvSiparisler.SelectedRows[0].DataBoundItem;
                 dgvSiparisDetaylar.DataSource = siparis.SiparisDetaylar;
             }
+            else
+            {
+                dgvSiparisDetaylar.DataSource = null;
+            }
         }
     }
 }
